@@ -108,4 +108,13 @@ public class WebActionSteps {
                 .shouldBe(Condition.visible)
                 .clear();
     }
+
+    @Когда("ввести в поле {string} файл")
+    public void inputFile(String elementName){
+        SelenideElement inputElement = pageManager
+                .getCurrentPage()
+                .getElement(elementName);
+        String filePath = "C:\\Users\\User\\Pictures\\ВельтищевНикита_ИКБО-02-16.png";
+        inputElement.sendKeys(filePath);
+    }
 }
